@@ -15,9 +15,4 @@
     <PackageReference Include="Oracle.EntityFrameworkCore" Version="8.23.40" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\Usuarios\" />
-    <Folder Include="Views\Reciclagem\" />
-  </ItemGroup>
-
 </Project>
