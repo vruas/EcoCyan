@@ -1,0 +1,39 @@
+﻿@model EcoCyan.Models.Reciclagem
+
+@{
+    ViewData["Title"] = "Registro de Reciclagens";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+
+<h4>Registrar nova reciclagem</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DataReciclagem" class="control-label"></label>
+                <input asp-for="DataReciclagem" class="form-control" />
+                <span asp-validation-for="DataReciclagem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuantidadeReciclada" class="control-label"></label>
+                <input asp-for="QuantidadeReciclada" class="form-control" />
+                <span asp-validation-for="QuantidadeReciclada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="User.NomeUser" class="control-label"></label>
+                <select asp-for="IdUser" class="form-group" asp-items="ViewBag.IdUser"></select>
+                <span asp-validation-for="IdUser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Registrar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

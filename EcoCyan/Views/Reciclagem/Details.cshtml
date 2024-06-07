@@ -1,0 +1,27 @@
+﻿@model EcoCyan.Models.Reciclagem
+
+@{
+    ViewData["Title"] = "Detalhes da Reciclagem";
+}
+
+<h2>Detalhes da Reciclagem</h2>
+
+<div>
+    <h4>Reciclagem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt class="col-sm-2">ID Reciclagem</dt>
+        <dd class="col-sm-2">@Model.IdReciclagem</dd>
+        <dt class="col-sm-2">Data Reciclagem</dt>
+        <dd class="col-sm-2">@Model.DataReciclagem</dd>
+        <dt class="col-sm-2">Quantidade Reciclada</dt>
+        <dd class="col-sm-2">@Model.QuantidadeReciclada</dd>
+        <dt class="col-sm-2">Usuario</dt>
+        <dd class="col-sm-2">@Model.User.NomeUser</dd>
+    </dl>
+</div>
+
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.IdReciclagem">Editar</a> |
+        <a asp-action="Index">Voltar para a lista</a>
+    </div>
