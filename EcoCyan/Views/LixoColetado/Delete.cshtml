@@ -1,0 +1,29 @@
+﻿@model EcoCyan.Models.LixoColetado
+
+@{
+    ViewData["Title"] = "Apagar Lixo Coletado";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h3>Tem certeza que deseja apagar este lixo coletado?</h3>
+<div>
+    <h4>Lixo Coletado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt class="col-sm-2">ID Lixo</dt>
+        <dd class="col-sm-2">@Model.IdLixoColetado</dd>
+        <dt class="col-sm-2">Tipo de Lixo</dt>
+        <dd class="col-sm-2">@Model.TipoLixo</dd>
+        <dt class="col-sm-2">Quantidade de Lixo</dt>
+        <dd class="col-sm-2">@Model.QuantidadeLixo</dd>
+        <dt class="col-sm-2">Local de Coleta</dt>
+        <dd class="col-sm-2">@Model.LocalColeta</dd>
+        <dt class="col-sm-2">Usuário</dt>
+        <dd class="col-sm-2">@Model.User.NomeUser</dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdLixoColetado" />
+        <input type="submit" value="Apagar" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar</a>
+    </form>

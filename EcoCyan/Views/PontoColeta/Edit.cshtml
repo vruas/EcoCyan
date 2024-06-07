@@ -1,0 +1,40 @@
+﻿@model EcoCyan.Models.PontoDeColeta
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+
+<h4>Ponto De Coleta</h4>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NomePontoColeta" class="control-label"></label>
+                <input asp-for="NomePontoColeta" class="form-control" />
+                <span asp-validation-for="NomePontoColeta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnderecoPontoColeta" class="control-label"></label>
+                <input asp-for="EnderecoPontoColeta" class="form-control" />
+                <span asp-validation-for="EnderecoPontoColeta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContatoPontoColeta" class="control-label"></label>
+                <input asp-for="ContatoPontoColeta" class="form-control" />
+                <span asp-validation-for="ContatoPontoColeta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EntregaLixo.DataEntrega" class="control-label"></label>
+                <select asp-for="EntregaLixo.DataEntrega" class="form-control" asp-items="ViewBag.EntregaLixoId"></select>
+                <span asp-validation-for="EntregaLixo.DataEntrega" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Editar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>

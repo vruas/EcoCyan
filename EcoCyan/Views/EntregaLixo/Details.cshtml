@@ -1,0 +1,28 @@
+﻿@model EcoCyan.Models.EntregaLixo
+
+@{
+    ViewData["Title"] = "Detalhes da Entrega de Lixo";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>Entrega de Lixo</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">ID Entrega</dt>
+        <dd class="col-sm-10">@Model.IdEntregaLixo</dd>
+        <dt class="col-sm-2">Data de Entrega</dt>
+        <dd class="col-sm-10">@Model.DataEntrega</dd>
+        <dt class="col-sm-2">Lixo Coletado</dt>
+        <dd class="col-sm-10">@Model.lixoColetado.IdLixoColetado</dd>
+        <dt class="col-sm-2">Usuario</dt>
+        <dd class="col-sm-10">@Model.User.NomeUser</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdEntregaLixo">Editar</a> |
+    <a asp-action="Index">Voltar</a>
+</div>
+
+

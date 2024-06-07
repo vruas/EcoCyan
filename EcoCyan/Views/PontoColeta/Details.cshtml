@@ -1,0 +1,29 @@
+﻿@model EcoCyan.Models.PontoDeColeta
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<div>
+    <h4>Ponto De Coleta</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">ID Ponto de Coleta</dt>
+        <dd class="col-sm-2">@Model.IdPontoColeta</dd>
+        <dt class="col-sm-2">Nome</dt>
+        <dd class="col-sm-2">@Model.NomePontoColeta</dd>
+        <dt class="col-sm-2">Endereço</dt>
+        <dd class="col-sm-2">@Model.EnderecoPontoColeta</dd>
+        <dt class="col-sm-2">Contato</dt>
+        <dd class="col-sm-2">@Model.ContatoPontoColeta</dd>
+        <dt class="col-sm-2">Entrega</dt>
+        <dd class="col-sm-2">@Model.EntregaLixo.DataEntrega</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdPontoColeta">Editar</a> |
+    <a asp-action="Index">Voltar para a lista</a>
+</div>
+
+
+

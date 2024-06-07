@@ -1,0 +1,41 @@
+﻿@model IEnumerable<EcoCyan.Models.PontoDeColeta>
+
+@{
+    ViewData["Title"] = "Pontos de Coleta";
+}
+
+<h2>Pontos de Coleta</h2>
+
+<p>
+    <a asp-action="Create">Criar Novo</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Ponto Coleta</th>
+            <th>Nome Ponto Coleta</th>
+            <th>Endereço</th>
+            <th>Contato</th>
+            <th>Data de Entrega</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.IdPontoColeta</td>
+                <td>@item.NomePontoColeta</td>
+                <td>@item.EnderecoPontoColeta</td>
+                <td>@item.ContatoPontoColeta</td>
+                <td>@item.EntregaLixo.DataEntrega</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdPontoColeta">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdPontoColeta">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdPontoColeta">Apagar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
