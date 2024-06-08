@@ -4,33 +4,45 @@
     ViewData["Title"] = "Nova Entrega de Lixo";
 }
 
-<h1>@ViewData["Title"]</h1>
+<h1 class="text-center">@ViewData["Title"]</h1>
 
-<h4>Entrega de Lixo</h4>
+<h4 class="text-center">Detalhes da Entrega de Lixo</h4>
 <hr />
 
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div class="form-group">
-                <label asp-for="DataEntrega" class="control-label"></label>
-                <input asp-for="DataEntrega" class="form-control" />
-                <span asp-validation-for="DataEntrega" class="text-danger">*</span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdLixoColetado" class="control-label"></label>
-                <select asp-for="IdLixoColetado" class="form-control" asp-items="ViewBag.IdLixoColetado"></select>
-                <span asp-validation-for="IdLixoColetado" class="text-danger">*</span>
-            </div> 
-            <div class="form-group">
-                <label asp-for="IdUser" class="control-label"></label>
-                <select asp-for="IdUser" class="form-control" asp-items="ViewBag.IdUser"></select>
-                <span asp-validation-for="IdUser" class="text-danger">*</span>
-            </div>
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <form asp-action="Create">
+                    <div class="form-group mb-3">
+                        <label asp-for="DataEntrega" class="form-label">Data da Entrega</label>
+                        <input asp-for="DataEntrega" class="form-control" placeholder="Selecione a data da entrega" />
+                        <span asp-validation-for="DataEntrega" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="IdLixoColetado" class="form-label">Lixo Coletado</label>
+                        <select asp-for="IdLixoColetado" class="form-select" asp-items="ViewBag.IdLixoColetado">
+                            <option value="">Selecione o tipo de lixo coletado</option>
+                        </select>
+                        <span asp-validation-for="IdLixoColetado" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="IdUser" class="form-label">Usuário Responsável</label>
+                        <select asp-for="IdUser" class="form-select" asp-items="ViewBag.IdUser">
+                            <option value="">Selecione o usuário responsável</option>
+                        </select>
+                        <span asp-validation-for="IdUser" class="text-danger"></span>
+                    </div>
 
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                    <div class="form-group text-center">
+                        <input type="submit" value="Registrar Entrega" class="btn btn-info px-4" />
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

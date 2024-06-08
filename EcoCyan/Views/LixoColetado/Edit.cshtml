@@ -4,41 +4,43 @@
     ViewData["Title"] = "Editar Lixo Coletado";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="container mt-5">
+    <h1 class="text-center">@ViewData["Title"]</h1>
 
-<h4>Editar Lixo Coletado</h4>
-<hr />
-
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="TipoLixo" class="control-label"></label>
-                <input asp-for="TipoLixo" class="form-control" />
-                <span asp-validation-for="TipoLixo" class="text-danger"></span>
+    <div class="card shadow-sm mt-4">
+        <div class="card-body">
+            <h4>Editar Lixo Coletado</h4>
+            <hr />
+            <div class="row">
+                <div class="col-md-6">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="TipoLixo" class="control-label">Tipo de Lixo</label>
+                            <input asp-for="TipoLixo" class="form-control" />
+                            <span asp-validation-for="TipoLixo" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="QuantidadeLixo" class="control-label">Quantidade de Lixo</label>
+                            <input asp-for="QuantidadeLixo" class="form-control" />
+                            <span asp-validation-for="QuantidadeLixo" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="LocalColeta" class="control-label">Local de Coleta</label>
+                            <input asp-for="LocalColeta" class="form-control" />
+                            <span asp-validation-for="LocalColeta" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="IdUser" class="control-label">Usuário</label>
+                            <select asp-for="IdUser" class="form-control" asp-items="ViewBag.IdUser"></select>
+                            <span asp-validation-for="IdUser" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Editar" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="QuantidadeLixo" class="control-label"></label>
-                <input asp-for="QuantidadeLixo" class="form-control" />
-                <span asp-validation-for="QuantidadeLixo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LocalColeta" class="control-label"></label>
-                <input asp-for="LocalColeta" class="form-control" />
-                <span asp-validation-for="LocalColeta" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="User.NomeUser" class="control-label"></label>
-                <select asp-for="IdUser" class="form-group" asp-items="ViewBag.IdUser"></select>
-                <span asp-validation-for="IdUser" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Editar" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
-
-
-

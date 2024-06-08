@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace EcoCyan.Models
 {
-    [Table("lixo_coletado")]
+    [Table("LIXO_COLETADO")]
     public class LixoColetado
     {
         [Key]

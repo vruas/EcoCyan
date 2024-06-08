@@ -1,41 +1,35 @@
 ﻿@model EcoCyan.Models.Reciclagem
 
 @{
-    ViewData["Title"] = "Editar Reciclagens";
+    ViewData["Title"] = "Editar Reciclagem";
 }
 
 <h1>@ViewData["Title"]</h1>
 
-
-<h4>Editar reciclagem</h4>
-<hr />
-
-<div class="row">
-    <div class="col-md-4">
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Editar Reciclagem</h4>
+        <hr />
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="DataReciclagem" class="control-label"></label>
+                <label asp-for="DataReciclagem" class="control-label">Data da Reciclagem:</label>
                 <input asp-for="DataReciclagem" class="form-control" />
                 <span asp-validation-for="DataReciclagem" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="QuantidadeReciclada" class="control-label"></label>
+                <label asp-for="QuantidadeReciclada" class="control-label">Quantidade Reciclada:</label>
                 <input asp-for="QuantidadeReciclada" class="form-control" />
                 <span asp-validation-for="QuantidadeReciclada" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="User.NomeUser" class="control-label"></label>
-                <select asp-for="IdUser" class="form-group" asp-items="ViewBag.IdUser"></select>
+                <label asp-for="IdUser" class="control-label">Usuário:</label>
+                <select asp-for="IdUser" class="form-control" asp-items="ViewBag.IdUser"></select>
                 <span asp-validation-for="IdUser" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Editar" class="btn btn-primary" />
+                <button type="submit" class="btn btn-primary">Editar</button>
             </div>
         </form>
     </div>
 </div>
-
-
-
-

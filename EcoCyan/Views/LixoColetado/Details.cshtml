@@ -4,28 +4,31 @@
     ViewData["Title"] = "Detalhes do Lixo Coletado";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="container mt-5">
+    <h1 class="text-center">@ViewData["Title"]</h1>
 
-<div>
-    <h4>Lixo Coletado</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt class="col-sm-2">ID Lixo</dt>
-        <dd class="col-sm-2">@Model.IdLixoColetado</dd>
-        <dt class="col-sm-2">Tipo de Lixo</dt>
-        <dd class="col-sm-2">@Model.TipoLixo</dd>
-        <dt class="col-sm-2">Quantidade de Lixo</dt>
-        <dd class="col-sm-2">@Model.QuantidadeLixo</dd>
-        <dt class="col-sm-2">Local de Coleta</dt>
-        <dd class="col-sm-2">@Model.LocalColeta</dd>
-        <dt class="col-sm-2">Usuário</dt>
-        <dd class="col-sm-2">@Model.User.NomeUser</dd>
-    </dl>
+    <div class="card shadow-sm mt-4">
+        <div class="card-body">
+            <h4>Lixo Coletado</h4>
+            <hr />
+            <div class="mb-4">
+                <dl class="row">
+                    <dt class="col-sm-3">ID Lixo</dt>
+                    <dd class="col-sm-9">@Model.IdLixoColetado</dd>
+                    <dt class="col-sm-3">Tipo de Lixo</dt>
+                    <dd class="col-sm-9">@Model.TipoLixo</dd>
+                    <dt class="col-sm-3">Quantidade de Lixo</dt>
+                    <dd class="col-sm-9">@Model.QuantidadeLixo</dd>
+                    <dt class="col-sm-3">Local de Coleta</dt>
+                    <dd class="col-sm-9">@Model.LocalColeta</dd>
+                    <dt class="col-sm-3">Usuário</dt>
+                    <dd class="col-sm-9">@Model.User.NomeUser</dd>
+                </dl>
+            </div>
+            <div class="text-center">
+                <a asp-action="Edit" asp-route-id="@Model.IdLixoColetado" class="btn btn-primary">Editar</a>
+                <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+            </div>
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.IdLixoColetado">Editar</a> |
-     <a asp-action="Index">Voltar</a>
-</div>
-
-
-

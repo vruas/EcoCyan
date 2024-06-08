@@ -4,33 +4,34 @@
     ViewData["Title"] = "Editar Entrega de Lixo";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="container mt-5">
+    <h1 class="text-center">@ViewData["Title"]</h1>
 
-<h4>Entrega de Lixo</h4>
-<hr />
-
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div class="form-group">
-                <label asp-for="DataEntrega" class="control-label"></label>
-                <input asp-for="DataEntrega" class="form-control" />
-                <span asp-validation-for="DataEntrega" class="text-danger">*</span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdLixoColetado" class="control-label"></label>
-                <select asp-for="IdLixoColetado" class="form-control" asp-items="ViewBag.IdLixoColetado"></select>
-                <span asp-validation-for="IdLixoColetado" class="text-danger">*</span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdUser" class="control-label"></label>
-                <select asp-for="IdUser" class="form-control" asp-items="ViewBag.IdUser"></select>
-                <span asp-validation-for="IdUser" class="text-danger">*</span>
-            </div>
-
-            <div class="form-group">
-                <input type="submit" value="Edit" class="btn btn-primary" />
-            </div>
-        </form>
+    <div class="card shadow-sm mt-4">
+        <div class="card-body">
+            <h4 class="card-title">Entrega de Lixo</h4>
+            <hr />
+            <form asp-action="Edit">
+                <div class="form-group mb-3">
+                    <label asp-for="DataEntrega" class="form-label"></label>
+                    <input asp-for="DataEntrega" class="form-control" />
+                    <span asp-validation-for="DataEntrega" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="IdLixoColetado" class="form-label"></label>
+                    <select asp-for="IdLixoColetado" class="form-select" asp-items="ViewBag.IdLixoColetado"></select>
+                    <span asp-validation-for="IdLixoColetado" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="IdUser" class="form-label"></label>
+                    <select asp-for="IdUser" class="form-select" asp-items="ViewBag.IdUser"></select>
+                    <span asp-validation-for="IdUser" class="text-danger"></span>
+                </div>
+                <div class="text-center mt-4">
+                    <input type="submit" value="Salvar" class="btn btn-info px-4" />
+                    <a asp-action="Index" class="btn btn-secondary px-4">Cancelar</a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>

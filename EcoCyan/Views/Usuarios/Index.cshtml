@@ -4,13 +4,12 @@
     ViewData["Title"] = "Usuários";
 }
 
-<H1>@ViewData["Title"]</H1>
-
+<h1>@ViewData["Title"]</h1>
 
 <h2>Usuários Cadastrados</h2>
 
 <p>
-    <a asp-action="Create">Cadastrar Novo Usuário</a>
+    <a asp-action="Create" class="btn btn-primary">Cadastrar Novo Usuário</a>
 </p>
 
 <table class="table">
@@ -20,7 +19,8 @@
             <th>Nome</th>
             <th>Email</th>
             <th>Senha</th>
-            <th>Tipo de Uusário</th>
+            <th>Tipo de Usuário</th>
+            <th>Ações</th>
         </tr>
     </thead>
     <tbody>
@@ -33,13 +33,11 @@
                 <td>@item.SenhaUser</td>
                 <td>@item.TipoUser</td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.IdUser">Editar</a> |
-                    <a asp-action="Details" asp-route-id="@item.IdUser">Detalhes</a> |
-                    <a asp-action="Delete" asp-route-id="@item.IdUser">Excluir</a>
+                    <a asp-action="Edit" asp-route-id="@item.IdUser" class="btn btn-primary">Editar</a>
+                    <a asp-action="Details" asp-route-id="@item.IdUser" class="btn btn-info">Detalhes</a>
+                    <a asp-action="Delete" asp-route-id="@item.IdUser" class="btn btn-danger">Excluir</a>
                 </td>
             </tr>
         }
+    </tbody>
 </table>
-
-
-

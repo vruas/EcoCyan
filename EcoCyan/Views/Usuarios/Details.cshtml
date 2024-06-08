@@ -4,15 +4,13 @@
     ViewData["Title"] = "Detalhes do Usuário";
 }
 
-
 <h1>@ViewData["Title"]</h1>
-
 
 <div>
     <h4>Usuário</h4>
     <hr />
     <dl class="row">
-        <dt class="col-sm-2">ID Ususario</dt>
+        <dt class="col-sm-2">ID Usuário</dt>
         <dd class="col-sm-10">@Model.IdUser</dd>
         <dt class="col-sm-2">Nome</dt>
         <dd class="col-sm-10">@Model.NomeUser</dd>
@@ -23,8 +21,9 @@
         <dt class="col-sm-2">Tipo de Usuário</dt>
         <dd class="col-sm-10">@Model.TipoUser</dd>
     </dl>
- </div>
- <div>
-        <a asp-action="Edit" asp-route-id="@Model.IdUser">Editar</a> |
-        <a asp-action="Index">Voltar</a>
- </div>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdUser" class="btn btn-primary">Editar</a> |
+    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+</div>

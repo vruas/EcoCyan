@@ -7,25 +7,92 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/EcoCyan.styles.css" asp-append-version="true" />
+    <style>
+        .navbar-custom {
+            background-color: #00BCD4; 
+            height: 100px;
+        }
+
+        .navbar-brand img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+        .nav-link {
+            color: #fff !important;
+        }
+
+        .nav-link:hover {
+            color: #B2EBF2 !important; 
+        }
+
+        .dropdown-menu {
+            background-color: #00BCD4; 
+        }
+
+        .dropdown-item {
+            color: #fff;
+        }
+
+        .dropdown-item:hover {
+            background-color: #B2EBF2; 
+        }
+
+        .img-size {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .footer {
+            background-color: #00796B; 
+            color: #000000;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-custom border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">EcoCyan</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="/images/ecoCyanLogo.png" alt="Logotipo do EcoCyan" class="img-fluid img-size" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mr-auto gap-4">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link" asp-area="" asp-controller="EntregaLixo" asp-action="Index">Entrega de Lixo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="LixoColetado" asp-action="Index">Lixo Coletado</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="PontoDeColeta" asp-action="Index">Pontos de Coleta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Reciclagem" asp-action="Index">Reciclagem</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Usuarios" asp-action="Index">Usuários</a>
                         </li>
                     </ul>
+                    @* 
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <button class="btn btn-primary bg-white text-black-50 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Entrar
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="/Usuarios/Login">Entrar como Usuário</a>
+                            </div>
+                        </li>
+                    </ul> 
+                    *@
                 </div>
             </div>
         </nav>
@@ -37,8 +104,8 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - EcoCyan - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div class="container text-center">
+            &copy; 2024 - EcoCyan - Todos os direitos reservados.
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

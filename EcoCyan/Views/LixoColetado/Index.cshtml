@@ -7,40 +7,39 @@
 <h1>@ViewData["Title"]</h1>
 
 <p>
-    <a asp-action="Create">Novo Lixo Coletado</a>
+    <a asp-action="Create" class="btn btn-primary">Novo Lixo Coletado</a>
 </p>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                ID Lixo Coletado
-            </th>
-            <th>
-                Data de Coleta
-            </th>
-            <th>
-                Lixo
-            </th>
-            <th>
-                Usuario
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
             <tr>
-                <td>@item.IdLixoColetado</td>
-                <td>@item.TipoLixo</td>
-                <td>@item.QuantidadeLixo</td>
-                <td>@item.LocalColeta</td>
-                <td>@item.User.NomeUser</td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.IdLixoColetado">Editar</a> |
-                    <a asp-action="Details" asp-route-id="@item.IdLixoColetado">Detalhes</a> |
-                    <a asp-action="Delete" asp-route-id="@item.IdLixoColetado">Apagar</a>
-                </td>
+                <th>ID Lixo Coletado</th>
+                <th>Tipo de Lixo</th>
+                <th>Quantidade</th>
+                <th>Local de Coleta</th>
+                <th>Usuário</th>
+                <th>Ações</th>
             </tr>
-        }
-    </tbody>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.IdLixoColetado</td>
+                    <td>@item.TipoLixo</td>
+                    <td>@item.QuantidadeLixo</td>
+                    <td>@item.LocalColeta</td>
+                    <td>@item.User.NomeUser</td>
+                    <td>
+                        <div class="btn-group" role="group">
+                            <a class="btn btn-primary" href="@Url.Action("Edit", new { id = item.IdLixoColetado })">Editar</a>
+                            <a class="btn btn-secondary" href="@Url.Action("Details", new { id = item.IdLixoColetado })">Detalhes</a>
+                            <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.IdLixoColetado })">Apagar</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

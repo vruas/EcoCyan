@@ -4,40 +4,51 @@
     ViewData["Title"] = "Excluir Entrega de Lixo";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="container mt-5">
+    <h1 class="text-center">@ViewData["Title"]</h1>
 
-<h3>Tem certeza que deseja excluir esta entrega de lixo?</h3>
-<div>
-    <h4>Entrega de Lixo</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            ID Entrega
-        </dt>
-        <dd class="col-sm-10">
-            @Model.IdEntregaLixo
-        </dd>
-        <dt class="col-sm-2">
-            Data de Entrega
-        </dt>
-        <dd class="col-sm-10">
-            @Model.DataEntrega
-        </dd>
-        <dt class="col-sm-2">
-            Lixo Coletado
-        </dt>
-        <dd class="col-sm-10">
-            @Model.lixoColetado.IdLixoColetado
-        </dd>
-        <dt class="col-sm-2">
-            Usuario
-        </dt>
-        <dd class="col-sm-10">
-            @Model.User.NomeUser
-        </dd>
-    </dl>
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="IdEntregaLixo" />
-        <input type="submit" value="Apagar" class="btn btn-danger" /> |
-        <a asp-action="Index">Voltar</a>
-    </form>
+    <div class="alert alert-warning mt-4" role="alert">
+        <h4 class="alert-heading">Tem certeza que deseja excluir esta entrega de lixo?</h4>
+        <p>Esta ação não pode ser desfeita. Abaixo estão os detalhes da entrega de lixo que será excluída.</p>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h4 class="card-title">Detalhes da Entrega de Lixo</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-3">
+                    ID Entrega
+                </dt>
+                <dd class="col-sm-9">
+                    @Model.IdEntregaLixo
+                </dd>
+                <dt class="col-sm-3">
+                    Data de Entrega
+                </dt>
+                <dd class="col-sm-9">
+                    @Model.DataEntrega)
+                </dd>
+                <dt class="col-sm-3">
+                    Lixo Coletado (ID)
+                </dt>
+                <dd class="col-sm-9">
+                    @Model.lixoColetado.IdLixoColetado
+                </dd>
+                <dt class="col-sm-3">
+                    Usuário Responsável
+                </dt>
+                <dd class="col-sm-9">
+                    @Model.User.NomeUser
+                </dd>
+            </dl>
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="IdEntregaLixo" />
+                <div class="text-center mt-4">
+                    <input type="submit" value="Apagar" class="btn btn-danger px-4" /> |
+                    <a asp-action="Index" class="btn btn-secondary px-4">Voltar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

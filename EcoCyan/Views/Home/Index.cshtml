@@ -1,8 +1,54 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "EcoCyan";
 }
+<div class="container text-center mt-5">
+    <h1 class="display-2">Bem-vindo ao <span class="fw-bolder text-info">EcoCyan</span></h1>
+    <div class="mt-5">
+        <p>No EcoCyan, promovemos a reciclagem e a sustentabilidade de forma única. Nossa plataforma permite que os usuários entendam melhor a importância da reciclagem, oferecendo informações e incentivos personalizados. Para os <span class="fw-bolder text-info">usuários</span>, uma experiência de <span class="fw-bolder text-info">engajamento ambiental</span>. Para as <span class="fw-bolder text-info">comunidades</span>, uma oportunidade de <span class="fw-bolder text-info">melhorar a gestão de resíduos e promover a sustentabilidade</span>. Junte-se a nós e transforme sua experiência com reciclagem e sustentabilidade.</p>
+    </div>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-10">
+            <div class="border border-4 border-info p-3">
+                <p class="mb-0 display-8 display-9">O que você está procurando no EcoCyan?</p>
+            </div>
+            <div class="d-flex flex-row justify-content-around mt-4">
+                <style>
+                    img {
+                        width: 50px;
+                        max-width: 50px;
+                    }
+
+                    .option-div {
+                        text-align: center;
+                        margin-right: 20px;
+                    }
+                </style>
+
+                <div class="mt-3 option-div">
+                   
+                    <p>Contribua para a reciclagem e aprenda mais sobre sustentabilidade!</p>
+                    <a asp-controller="Usuarios" asp-action="Create" class="btn btn-info mb-3">Cadastre-se</a>
+                </div>
+
+                <div class="mt-3 option-div">
+                    
+                    <p>Cadastre um novo ponto de coleta na sua comunidade!</p>
+                    <a asp-controller="PontoDeColeta" asp-action="Create" class="btn btn-info mb-3">Cadastrar Ponto de Coleta</a>
+                </div>
+
+                <div class="mt-3 option-div">
+                   
+                    <p>Registre a reciclagem dos materiais coletados!</p>
+                    <a asp-controller="Reciclagem" asp-action="Create" class="btn btn-info mb-3">Registrar Reciclagem</a>
+                </div>
+
+                <div class="mt-3 option-div">
+          
+                    <p>Registre a entrega de lixo coletado!</p>
+                    <a asp-controller="EntregaLixo" asp-action="Create" class="btn btn-info">Registrar Entrega</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

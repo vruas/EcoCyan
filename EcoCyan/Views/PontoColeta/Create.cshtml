@@ -1,11 +1,10 @@
 ﻿@model EcoCyan.Models.PontoDeColeta
 
 @{
-    ViewData["Title"] = "Criar";
+    ViewData["Title"] = "Criar Ponto de Coleta";
 }
 
-<h4>Ponto De Coleta</h4>
-
+<h4>Ponto de Coleta</h4>
 <hr />
 
 <div class="row">
@@ -28,7 +27,7 @@
                 <span asp-validation-for="ContatoPontoColeta" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EntregaLixo.DataEntrega" class="control-label"></label>
+                <label asp-for="EntregaLixo.DataEntrega" class="control-label">Data de Entrega</label>
                 <select asp-for="EntregaLixo.DataEntrega" class="form-control" asp-items="ViewBag.EntregaLixoId"></select>
                 <span asp-validation-for="EntregaLixo.DataEntrega" class="text-danger"></span>
             </div>
@@ -37,3 +36,4 @@
             </div>
         </form>
     </div>
+</div>

@@ -1,37 +1,39 @@
 ﻿@model IEnumerable<EcoCyan.Models.Reciclagem>
 
-    @{
-        ViewData["Title"] = "Registro de Reciclagens";
-    }
+@{
+    ViewData["Title"] = "Registro de Reciclagens";
+}
 
-    <h2>Registro de Reciclagens</h2>
+<h2>@ViewData["Title"]</h2>
 
-    <p>
-        <a asp-action="Create">Criar novo registro</a>
-    </p>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Criar novo registro</a>
+</p>
 
-    <table>
-        <thead>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Reciclagem</th>
+            <th>Data Reciclagem</th>
+            <th>Quantidade Reciclada</th>
+            <th>Usuário</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
             <tr>
-                <th>ID Reciclagem</th>
-                <th>Data Reciclagem</th>
-                <th>Quantidade Reciclada</th>
-                <th>Usuario</th>
+                <td>@item.IdReciclagem</td>
+                <td>@item.DataReciclagem</td>
+                <td>@item.QuantidadeReciclada</td>
+                <td>@item.User.NomeUser</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdReciclagem" class="btn btn-primary">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdReciclagem" class="btn btn-info">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdReciclagem" class="btn btn-danger">Deletar</a>
+                </td>
             </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.IdReciclagem</td>
-                    <td>@item.DataReciclagem</td>
-                    <td>@item.QuantidadeReciclada</td>
-                    <td>@item.User.NomeUser</td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.IdReciclagem">Editar</a> |
-                        <a asp-action="Details" asp-route-id="@item.IdReciclagem">Detalhes</a> |
-                        <a asp-action="Delete" asp-route-id="@item.IdReciclagem">Deletar</a>
-                    </td>
-                </tr>
-            }
-    </table>
+        }
+    </tbody>
+</table>

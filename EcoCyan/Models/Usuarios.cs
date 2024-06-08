@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 namespace EcoCyan.Models
 {
-    [Table("usuarios")]
+    [Table("USUARIOS")]
     public class Usuarios
     {
         [Key]
